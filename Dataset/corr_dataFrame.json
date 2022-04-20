@@ -1,0 +1,52 @@
+{
+    "inter_feature_set": {
+        "feature_set": [
+            "EE1: My interaction with Blockchain / Cryptocurrency Coin is clear and understandable.",
+            "FC3: Blockchain / Cryptocurrency Coin is compatible with other systems I use."
+        ],
+        "corr_dict": {
+            "EE1": {
+                "EE1": 1.0,
+                "FC3": null
+            },
+            "FC3": {
+                "EE1": 0.5837298750514555,
+                "FC3": 1.0
+            }
+        }
+    },
+    "non_inter_feature_set": {
+        "feature_set": [
+            "SE1: I can complete a job or task using Blockchain / Cryptocurrency Coin , if there is no one around to tell me what to do."
+        ],
+        "corr_dict": {
+            "SE1": {
+                "SE1": 1.0
+            }
+        }
+    },
+    "union_feature_set": {
+        "feature_set": [
+            "EE1: My interaction with Blockchain / Cryptocurrency Coin is clear and understandable.",
+            "FC3: Blockchain / Cryptocurrency Coin is compatible with other systems I use.",
+            "SE1: I can complete a job or task using Blockchain / Cryptocurrency Coin , if there is no one around to tell me what to do."
+        ],
+        "corr_dict": {
+            "EE1": {
+                "EE1": 1.0,
+                "FC3": null,
+                "SE1": null
+            },
+            "FC3": {
+                "EE1": 0.5837298750514555,
+                "FC3": 1.0,
+                "SE1": null
+            },
+            "SE1": {
+                "EE1": 0.6711056982203533,
+                "FC3": 0.5365611986075159,
+                "SE1": 1.0
+            }
+        }
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "1. Do you own any of the following?": [
+        "Mobile Smartphone",
+        "Bank Cards (Credit, Debit, Pre-paid)",
+        "Touch n Go",
+        "Internet Services (e.g: Broadband)",
+        "E-wallet account (E.g: MOL or PayPal)",
+        "Internet of Things gadget (e.g: Fitbit \u2013 measure steps, etc)",
+        "Blockchain / Cryptocurrency Coin",
+        "HealthCare Gadget (E.g: Blood pressure measure device etc)",
+        "Touch n Go, EzLink etc"
+    ],
+    "3. Have you made any electronic payments in the past 12 months?": [
+        "Yes (Mobile)",
+        "Yes (Bank Cards (i.e. Credit, Debit, Pre-paid))",
+        "Yes (Touch n Go)",
+        "Yes (Internet Services (e.g: Broadband))",
+        "Yes (E-wallet account (E.g: MOL or PayPal))",
+        "Yes (Blockchain / Cryptocurrency Coin solutions)",
+        "No",
+        "Yes (Touch n Go, Ezlink etc)"
+    ],
+    "6. E-payment purchasing, Loyalty Points and Crypto Coin [(1) Have you ever purchased anything using the E-payment mode?]": [
+        "None"
+    ],
+    "None": [
+        "None"
+    ]
+}

@@ -1,0 +1,201 @@
+Gender ,Ethnicity ,Nationality,Marital Status ,Occupation ,Monthly Income ,Education level ,Telemedicine improves my access to healthcare services.,Telemedicine saves me time traveling to a hospital or specialist clinic. ,Telemedicine provides for my healthcare needs. ,It was simple to use this system. ,It was easy to learn to use the system. ,The way I interact with this system is pleasant. ,I like using this system. ,This system is simple and easy to understand. ,I could easily talk to the clinician using the telehealth system. ,I could hear the clinician clearly using the telehealth system.,I felt I was able to express myself effectively. ,"Using the telemedicine system, I can see the clinician as well as if we met in person. ",I think the visits provided over the telemedicinesystem are the same as in-person visits. ,"Whenever I made a mistake using the system, I could recover easily and quickly. ",The system gave error messages that clearly told me how to fix problems. ,Telehealth is an acceptable way to receive healthcare services.,I feel comfortable communicating with the clinician using the telemedicine system.,Telemedicine is an acceptable way to receive healthcare services.,"Overall, I am satisfied with this telehealth system."
+Female,Malay,Malaysian,Married,Professional,> RM 10000,Diploma,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+Male,Chinese,Non-Malaysian,Married,Retired,RM 5000 - RM 10000,Secondary school,5,5,5,5,5,5,5,5,5,5,5,5,4,5,5,4,5,5,5
+Female,Kadazan,Malaysian,Single,Professional,Rm 1200- RM 5000,Bachelor's Degree,5,5,5,5,5,5,5,5,5,5,5,4,5,5,5,5,5,4,5
+Female,Chinese,Malaysian,Married,Freelancer,Rm 1200- RM 5000,Bachelor's Degree,5,5,5,5,5,5,5,5,5,5,5,3,4,5,5,5,5,4,5
+Female,Chinese,Malaysian,Married,Freelancer,Rm 1200- RM 5000,Bachelor's Degree,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+Female,Chinese,Malaysian,Single,Freelancer,RM 5000 - RM 10000,Master/PhD/Others,5,5,5,5,5,5,5,5,5,5,5,5,4,5,3,5,5,5,5
+Female,Indian,Malaysian,Married,Professional,Rm 1200- RM 5000,Diploma,5,5,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+Female,Chinese,Malaysian,Single,Unemployed,<RM 1200,Bachelor's Degree,5,5,2,5,5,3,1,5,5,5,5,3,5,5,5,5,1,4,5
+Female,Kadazan,Malaysian,Married,Professional,RM 5000 - RM 10000,Master/PhD/Others,3,5,5,5,5,5,5,5,5,5,5,4,3,5,5,3,3,3,4
+Male,Chinese,Malaysian,Single,student,<RM 1200,Secondary school,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+Female,Malay,Malaysian,Single,Professional,Rm 1200- RM 5000,Bachelor's Degree,5,5,4,4,4,4,3,3,3,4,4,3,3,3,3,3,3,3,3
+Female,Chinese,Malaysian,Married,Professional,RM 5000 - RM 10000,Bachelor's Degree,4,4,2,4,4,4,3,4,4,4,2,4,1,2,3,3,3,2,3
+Male,Malay,Non-Malaysian,Married,Professional,Rm 1200- RM 5000,Bachelor's Degree,5,5,5,5,5,5,5,5,4,5,2,4,1,1,2,4,4,4,5
+Female,Chinese,Non-Malaysian,Married,Housewife,> RM 10000,Bachelor's Degree,5,5,5,5,5,5,5,5,5,5,4,5,3,5,5,4,5,4,5
+Male,Malay,Non-Malaysian,Married,Professional,Rm 1200- RM 5000,Bachelor's Degree,5,5,5,5,5,5,5,5,4,5,2,4,1,1,2,4,4,4,5
+Female,Chinese,Malaysian,Single,Professional,Rm 1200- RM 5000,Master/PhD/Others,5,5,5,5,5,5,5,5,5,5,5,5,1,1,1,1,1,1,1
+Female,Malay,Malaysian,Married,Unemployed,<RM 1200,Secondary school,5,5,4,5,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4
+Female,Chinese,Malaysian,Married,Freelancer,<RM 1200,Bachelor's Degree,5,5,4,5,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4
+Female,Malay,Malaysian,Single,Housewife,Rm 1200- RM 5000,Bachelor's Degree,5,5,3,5,5,5,4,4,3,3,4,4,4,3,4,4,3,3,3
+Male,Chinese,Malaysian,Married,Professional,Rm 1200- RM 5000,Bachelor's Degree,5,5,4,5,5,5,5,4,5,5,5,5,4,4,4,5,5,5,4
+Female,Chinese,Malaysian,Married,Professional,RM 5000 - RM 10000,Master/PhD/Others,5,5,4,5,5,5,4,4,4,4,4,4,3,4,3,4,3,4,4
+Male,Chinese,Malaysian,Single,Professional,RM 5000 - RM 10000,Diploma,5,5,4,5,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4
+Female,Indian,Malaysian,Married,Postgraduate student,Rm 1200- RM 5000,Bachelor's Degree,5,5,3,5,5,5,4,3,3,4,3,4,2,3,3,4,4,4,3
+Male,Chinese,Malaysian,Single,Freelancer,RM 5000 - RM 10000,Master/PhD/Others,5,5,3,5,5,5,4,3,4,4,2,4,2,2,2,4,2,2,3
+Female,Malay,Malaysian,Married,Freelancer,Rm 1200- RM 5000,Secondary school,5,5,4,5,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4
+Female,Chinese,Malaysian,Single,Professional,RM 5000 - RM 10000,Bachelor's Degree,5,5,4,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,4
+Female,Chinese,Malaysian,Married,Housewife,Rm 1200- RM 5000,Secondary school,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+Female,Malay,Malaysian,Married,Retired,Rm 1200- RM 5000,Master/PhD/Others,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+Female,Malay,Non-Malaysian,Married,Professional,Rm 1200- RM 5000,Bachelor's Degree,5,5,5,5,5,4,4,4,4,5,5,4,3,5,4,4,3,4,4
+Female,Malay,Non-Malaysian,Married,Professional,Rm 1200- RM 5000,Bachelor's Degree,5,5,5,5,5,4,4,4,4,5,5,4,3,5,4,4,3,4,4
+Female,Indian,Malaysian,Single,Non executive ,Rm 1200- RM 5000,Master/PhD/Others,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4
+Female,Chinese,Malaysian,Married,Freelancer,Rm 1200- RM 5000,Diploma,4,5,3,5,5,5,3,5,3,2,3,3,1,4,5,3,3,3,3
+Female,Indonesian,Non-Malaysian,Married,Housewife,Rm 1200- RM 5000,Diploma,5,4,4,5,5,4,4,5,5,5,5,4,4,5,5,4,4,5,5
+Male,Chinese,Non-Malaysian,Married,Professional,RM 5000 - RM 10000,Master/PhD/Others,5,5,4,5,5,5,5,5,5,4,5,5,4,3,5,5,5,5,5
+Male,Chinese,Malaysian,Single,Professional,Rm 1200- RM 5000,Bachelor's Degree,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+Male,Chinese,Malaysian,Married,Professional,> RM 10000,Master/PhD/Others,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+Male,Chinese,Malaysian,Single,Freelancer,Rm 1200- RM 5000,Secondary school,5,5,5,5,5,5,5,5,5,5,5,5,4,5,5,5,5,5,5
+Female,Chinese,Malaysian,Divorced,Professional,RM 5000 - RM 10000,Diploma,5,5,5,5,5,5,5,5,5,5,5,5,5,3,3,5,5,5,4
+Female,Chinese,Malaysian,Married,Housewife,Rm 1200- RM 5000,Bachelor's Degree,5,5,5,5,5,5,5,5,4,4,4,5,4,5,5,5,5,5,5
+Female,Indian,Malaysian,Single,Professional,Rm 1200- RM 5000,Diploma,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+Male,Black ,Non-Malaysian,Married,Retired,RM 5000 - RM 10000,Diploma,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+Female,Chinese,Non-Malaysian,Widow,Housewife,<RM 1200,Secondary school,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+Male,Chinese,Malaysian,Married,Professional,> RM 10000,Bachelor's Degree,5,5,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+Female,Chinese,Malaysian,Married,Retired,Rm 1200- RM 5000,Bachelor's Degree,5,5,5,4,4,5,5,3,5,5,5,5,5,3,3,5,5,5,5
+Male,Chinese,Malaysian,Married,Professional,> RM 10000,Bachelor's Degree,5,5,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+Female,Malay,Malaysian,Married,Professional,Rm 1200- RM 5000,Diploma,5,5,4,4,4,4,5,5,4,4,5,5,5,5,5,5,5,5,5
+Female,Malay,Malaysian,Single,Nurse,Rm 1200- RM 5000,Diploma,5,5,5,5,5,5,5,5,5,5,4,4,4,4,4,5,5,5,5
+Female,Indian,Malaysian,Single,Professional,RM 5000 - RM 10000,Diploma,4,5,3,4,4,4,3,4,4,3,2,1,3,4,3,3,3,4,4
+Female,Chinese,Malaysian,Single,Professional,Rm 1200- RM 5000,Bachelor's Degree,5,5,5,5,5,5,5,5,5,5,4,4,4,4,5,5,5,5,5
+Female,Indian,Malaysian,Single,staff nurse ,Rm 1200- RM 5000,Bachelor's Degree,3,5,5,5,4,5,4,5,4,5,4,5,2,5,4,4,4,5,4
+Female,Chinese,Malaysian,Married,Freelancer,Rm 1200- RM 5000,Bachelor's Degree,4,4,4,4,4,3,3,3,4,4,4,4,3,3,3,4,4,4,4
+Female,Chinese,Malaysian,Single,Freelancer,<RM 1200,Secondary school,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+Female,Malay,Malaysian,Single,Professional,Rm 1200- RM 5000,Diploma,5,5,5,4,3,3,4,4,5,5,5,5,3,3,3,3,3,3,3
+Male,Chinese,Malaysian,Married,Unemployed,<RM 1200,Diploma,5,5,5,4,5,5,5,5,5,5,5,5,5,4,4,4,5,4,4
+Female,Chinese,Malaysian,Married,Freelancer,Rm 1200- RM 5000,Diploma,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+Female,Indonesia,Non-Malaysian,Married,Housewife,Rm 1200- RM 5000,Diploma,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+Female,Chinese,Malaysian,Married,Housewife,RM 5000 - RM 10000,Bachelor's Degree,4,5,3,5,5,4,2,4,5,5,5,3,1,1,2,1,3,1,1
+Female,Chinese,Malaysian,Single,Professional,Rm 1200- RM 5000,Bachelor's Degree,5,5,4,5,5,5,5,5,5,5,3,2,1,3,3,5,2,5,5
+Female,Malay,Malaysian,Married,Professional,> RM 10000,Bachelor's Degree,4,5,4,3,3,2,2,3,1,1,1,3,1,3,1,3,3,3,1
+Male,Indian,Malaysian,Single,Postgraduate student,<RM 1200,Bachelor's Degree,5,5,3,5,5,5,5,5,5,5,5,5,2,5,5,3,5,3,5
+Female,Chinese,Malaysian,Married,Freelancer,Rm 1200- RM 5000,Diploma,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+Male,Chinese,Malaysian,Married,Freelancer,Rm 1200- RM 5000,Secondary school,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+Female,Malay,Malaysian,Single,Professional,Rm 1200- RM 5000,Diploma,5,5,5,4,3,3,4,4,5,5,5,5,3,3,3,3,3,3,3
+Female,Chinese,Malaysian,Married,Housewife,<RM 1200,Secondary school,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+Female,Chinese,Malaysian,Married,Professional,RM 5000 - RM 10000,Bachelor's Degree,5,5,3,5,5,5,5,5,5,5,5,5,5,3,3,5,4,4,5
+Female,Malay,Malaysian,Single,Student,<RM 1200,Bachelor's Degree,4,4,3,5,4,3,3,3,4,3,3,3,4,4,3,4,3,4,3
+Male,Malay,Malaysian,Married,Professional,RM 5000 - RM 10000,Master/PhD/Others,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+Female,Chinese,Malaysian,Single,Student,<RM 1200,Secondary school,4,5,4,3,4,4,3,5,5,4,2,5,1,4,3,2,2,3,3
+Male,Chinese,Malaysian,Married,Freelancer,RM 5000 - RM 10000,Bachelor's Degree,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+Female,Malay,Malaysian,Single,Professional,Rm 1200- RM 5000,Diploma,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+Female,Malay,Malaysian,Single,Student,<RM 1200,Bachelor's Degree,4,4,3,5,4,3,3,3,4,3,3,3,4,4,3,4,3,4,3
+Female,Chinese,Malaysian,Single,Professional,Rm 1200- RM 5000,Bachelor's Degree,2,4,2,3,3,3,3,4,3,2,2,3,1,3,2,4,4,4,3
+Male,Chinese,Malaysian,Single,Freelancer,Rm 1200- RM 5000,Secondary school,5,5,5,5,5,5,5,5,5,5,5,4,4,5,5,5,5,5,5
+Female,Indonesia,Non-Malaysian,Married,Housewife,Rm 1200- RM 5000,Diploma,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3
+Female,Chinese,Malaysian,Married,Housewife,<RM 1200,Secondary school,4,5,5,5,5,4,5,5,4,4,4,4,4,4,4,5,5,5,5
+Male,Indian,Malaysian,Married,Professional,RM 5000 - RM 10000,Diploma,5,5,5,5,5,4,5,5,5,5,5,5,4,5,5,5,5,5,4
+Female,Chinese,Malaysian,Married,Professional,Rm 1200- RM 5000,Master/PhD/Others,5,5,5,4,4,3,3,3,3,3,3,3,3,2,2,3,2,1,2
+Female,Chinese,Non-Malaysian,Married,Professional,> RM 10000,Master/PhD/Others,5,5,5,5,5,5,5,5,5,5,5,5,5,3,3,5,4,4,5
+Female,Malay,Malaysian,Married,Professional,RM 5000 - RM 10000,Diploma,4,5,3,4,3,3,4,4,3,3,3,4,3,3,2,3,4,3,3
+Female,Chinese,Malaysian,Married,Staff nurse ,Rm 1200- RM 5000,Bachelor's Degree,4,5,4,5,5,5,5,5,5,5,3,2,1,3,3,5,2,5,5
+Female,Chinese,Malaysian,Single,Freelancer,RM 5000 - RM 10000,Diploma,4,5,4,3,3,2,2,3,1,1,1,3,1,3,1,3,3,3,1
+Female,Malay,Malaysian,Married,Freelancer,Rm 1200- RM 5000,Diploma,5,5,3,5,5,5,5,5,5,5,5,5,2,5,5,3,5,3,5
+Female,Malay,Malaysian,Single,Professional,> RM 10000,Master/PhD/Others,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+Male,Chinese,Malaysian,Married,Unemployed,<RM 1200,Bachelor's Degree,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+Female,Chinese,Malaysian,Married,Freelancer,Rm 1200- RM 5000,Diploma,4,5,3,4,3,3,4,4,5,5,5,5,3,3,3,3,3,3,3
+Female,Malay,Malaysian,Single,Housewife,Rm 1200- RM 5000,Secondary school,4,5,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+Female,Malay,Malaysian,Married,Housewife,<RM 1200,Diploma,5,5,3,5,5,5,5,5,5,5,5,5,5,3,3,5,4,4,5
+Female,Chinese,Malaysian,Married,Professional,RM 5000 - RM 10000,Master/PhD/Others,4,5,2,5,4,3,3,3,4,3,3,3,4,4,3,4,3,4,3
+Female,Chinese,Malaysian,Single,Professional,Rm 1200- RM 5000,Diploma,5,5,3,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+Male,Indonesia,Non-Malaysian,Married,Postgraduate student,<RM 1200,Master/PhD/Others,4,5,2,3,4,4,3,5,5,4,2,5,1,4,3,2,2,3,3
+Female,Chinese,Malaysian,Single,Freelancer,RM 5000 - RM 10000,Bachelor's Degree,4,5,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+Male,Indian,Malaysian,Married,Freelancer,Rm 1200- RM 5000,Secondary school,4,5,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+Female,Chinese,Malaysian,Single,Professional,> RM 10000,Master/PhD/Others,3,4,2,5,4,3,3,3,4,3,3,3,4,4,3,4,3,4,3
+Female,Chinese,Malaysian,Single,Housewife,Rm 1200- RM 5000,Bachelor's Degree,5,5,4,3,3,3,3,4,3,2,2,3,1,3,2,4,4,4,3
+Female,Malay,Malaysian,Single,Professional,Rm 1200- RM 5000,Diploma,5,5,5,5,4,3,3,3,4,3,3,3,4,4,3,4,3,4,3
+Female,Chinese,Malaysian,Single,Student,<RM 1200,Diploma,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+Male,Chinese,Malaysian,Married,Professional,Rm 1200- RM 5000,Diploma,4,4,4,3,4,4,3,5,5,4,2,5,1,4,3,2,2,3,3
+Female,Malay,Malaysian,Married,Student,<RM 1200,Bachelor's Degree,5,4,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+Male,Malay,Malaysian,Married,Freelancer,Rm 1200- RM 5000,Bachelor's Degree,5,4,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+Female,Chinese,Malaysian,Married,Professional,RM 5000 - RM 10000,Master/PhD/Others,4,4,3,5,4,3,3,3,4,3,3,3,4,4,3,4,3,4,3
+Female,Chinese,Malaysian,Married,Student,<RM 1200,Bachelor's Degree,4,4,4,3,3,3,3,4,3,2,2,3,1,3,2,4,4,4,3
+Female,Chinese,Malaysian,Married,Manager,RM 5000 - RM 10000,Bachelor's Degree,5,5,3,4,5,5,5,5,5,5,5,4,4,5,5,5,5,5,5
+Male,Chinese,Malaysian,Single,Professional,RM 5000 - RM 10000,Bachelor's Degree,5,5,5,4,3,5,5,4,5,5,5,5,4,4,4,5,5,5,5
+Female,Chinese,Malaysian,Married,Professional,Rm 1200- RM 5000,Bachelor's Degree,3,5,3,2,3,2,3,3,2,5,5,5,5,3,3,5,4,5,4
+Female,Chinese,Malaysian,Married,Housewife,<RM 1200,Bachelor's Degree,4,5,4,4,4,5,4,4,5,4,5,4,4,4,3,4,4,4,4
+Female,Chinese,Malaysian,Married,Housewife,<RM 1200,Master/PhD/Others,3,5,3,3,3,3,3,4,3,3,3,3,3,3,3,3,3,4,4
+Female,Chinese,Malaysian,Single,Professional,RM 5000 - RM 10000,Bachelor's Degree,5,5,5,3,3,5,5,2,5,5,5,5,5,5,5,5,5,5,5
+Female,Chinese,Malaysian,Married,Housewife,Rm 1200- RM 5000,Diploma,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+Female,Malay,Malaysian,Single Mother,Hospital aider,<RM 1200,Diploma,5,5,5,5,5,5,5,5,5,5,5,5,4,4,5,5,5,5,5
+Female,Chinese,Malaysian,Married,Entrepreneur,<RM 1200,Master/PhD/Others,5,5,5,5,5,5,5,5,5,5,5,5,2,4,4,5,5,5,5
+Female,Chinese,Malaysian,Single,Unemployed,<RM 1200,Diploma,3,3,1,5,5,3,3,5,3,3,1,1,3,2,1,4,3,5,3
+Female,Chinese,Malaysian,Married,Professional,Rm 1200- RM 5000,Bachelor's Degree,5,5,5,5,5,5,5,5,4,4,3,5,4,3,3,5,5,5,5
+Female,Chinese,Malaysian,Single,Professional,RM 5000 - RM 10000,Bachelor's Degree,5,5,5,3,3,5,5,2,5,5,5,5,5,5,5,5,5,5,5
+Female,Chinese,Malaysian,Single,Professional,> RM 10000,Master/PhD/Others,5,5,5,5,5,5,5,5,5,5,5,4,4,5,5,4,5,4,5
+Female,Chinese,Malaysian,Single,Freelancer,> RM 10000,Bachelor's Degree,3,2,2,2,3,3,2,2,3,3,5,4,2,3,3,4,5,5,4
+Female,Chinese,Malaysian,Married,Housewife,<RM 1200,Bachelor's Degree,4,5,4,4,4,5,4,4,5,4,5,4,4,4,3,4,4,4,4
+Female,Chinese,Malaysian,Single,Freelancer,> RM 10000,Bachelor's Degree,3,2,2,2,3,3,2,2,3,3,5,4,2,3,3,4,5,5,4
+Female,Chinese,Malaysian,Married,Professional,Rm 1200- RM 5000,Bachelor's Degree,5,5,5,5,5,5,5,5,4,4,3,5,4,3,3,5,5,5,5
+Male,Indian,Malaysian,Married,Professional,RM 5000 - RM 10000,Diploma,5,5,5,5,5,5,5,5,5,3,5,4,5,5,5,5,5,5,5
+Female,Chinese,Non-Malaysian,Married,Housewife,> RM 10000,Bachelor's Degree,5,5,4,5,5,5,4,5,5,4,5,5,4,4,5,5,5,5,5
+Female,Indonesian,Non-Malaysian,Single,Professional,RM 5000 - RM 10000,Bachelor's Degree,5,5,2,5,5,5,5,5,3,3,2,2,1,4,4,2,2,2,2
+Female,Chinese,Non-Malaysian,Married,Professional,Rm 1200- RM 5000,Bachelor's Degree,5,5,5,3,3,5,5,5,4,4,3,3,4,4,5,5,4,3,4
+Male,Chinese,Malaysian,Single,Professional,RM 5000 - RM 10000,Bachelor's Degree,5,5,5,5,4,5,5,4,5,5,5,5,5,4,4,5,5,5,5
+Female,Chinese,Malaysian,Married,Housewife,<RM 1200,Bachelor's Degree,5,5,4,5,5,3,4,5,3,2,3,3,4,4,2,4,5,4,4
+Female,Chinese,Malaysian,Married,Housewife,<RM 1200,Bachelor's Degree,5,5,4,5,5,3,4,5,3,2,3,3,4,4,2,4,5,4,4
+Male,Bulgarian,Non-Malaysian,Single,Professional,> RM 10000,Diploma,5,5,5,5,5,5,5,5,5,5,5,4,4,5,3,5,5,5,5
+Female,Chinese,Malaysian,Married,Housewife,<RM 1200,Master/PhD/Others,3,5,3,3,3,3,3,4,3,3,3,3,3,3,3,3,3,4,4
+Male,indonesia,Non-Malaysian,Married,Freelancer,Rm 1200- RM 5000,Secondary school,1,4,4,4,4,4,4,4,4,4,4,3,2,3,3,3,3,3,3
+Female,Chinese,Malaysian,Married,Professional,RM 5000 - RM 10000,Master/PhD/Others,5,5,3,5,5,5,5,5,5,5,5,5,5,5,5,4,5,5,5
+Female,Chinese,Malaysian,Single,Professional,RM 5000 - RM 10000,Master/PhD/Others,5,5,4,5,5,5,5,5,5,4,4,4,3,4,5,5,5,4,4
+Female,Chinese,Non-Malaysian,Single,Professional,Rm 1200- RM 5000,Bachelor's Degree,5,5,5,5,5,5,5,5,5,5,5,5,5,5,3,5,5,5,5
+Male,Chinese,Malaysian,Married,Professional,Rm 1200- RM 5000,Bachelor's Degree,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+Female,Chinese Indonesian,Non-Malaysian,Single,Unemployed,<RM 1200,Bachelor's Degree,5,5,5,4,5,5,4,4,4,4,4,4,5,5,3,5,5,5,5
+Female,Indonesian,Non-Malaysian,Married,Housewife,<RM 1200,Master/PhD/Others,5,5,5,5,5,5,5,5,5,5,5,4,4,5,5,5,5,5,5
+Male,Chinese,Non-Malaysian,Married,Bussiness ,> RM 10000,Secondary school,5,5,5,5,5,5,5,5,5,5,5,5,5,4,5,4,5,5,5
+Male,Islam,Non-Malaysian,Married,Professional,RM 5000 - RM 10000,Master/PhD/Others,3,5,4,3,5,5,5,5,5,3,5,5,3,3,4,4,5,4,5
+Male,Chinese,Malaysian,Married,Freelancer,RM 5000 - RM 10000,Secondary school,3,5,5,4,4,4,4,4,4,4,4,5,5,4,4,4,4,4,5
+Female,Chinese,Malaysian,Married,Professional,RM 5000 - RM 10000,Diploma,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+Male,Chinese,Malaysian,Married,Freelancer,> RM 10000,Bachelor's Degree,5,5,5,5,5,5,5,5,5,5,5,5,4,5,3,4,5,4,5
+Female,Chinese,Malaysian,Single,Freelancer,Rm 1200- RM 5000,Bachelor's Degree,5,5,5,4,5,5,5,5,5,5,5,4,4,5,5,5,5,5,5
+Female,Chinese,Malaysian,Single,Freelancer,Rm 1200- RM 5000,Bachelor's Degree,5,5,5,4,5,5,5,5,5,5,5,4,4,5,5,5,5,5,5
+Male,Chinese,Non-Malaysian,Married,Professional,RM 5000 - RM 10000,Bachelor's Degree,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+Male,Malay,Non-Malaysian,Married,Freelancer,RM 5000 - RM 10000,Bachelor's Degree,5,5,5,5,5,5,5,5,4,4,4,5,4,5,5,5,5,5,5
+Male,Malay,Non-Malaysian,Married,Freelancer,RM 5000 - RM 10000,Bachelor's Degree,5,5,5,5,5,5,5,5,4,4,4,5,4,5,5,5,5,5,5
+Female,Chinese,Malaysian,Single,Professional,> RM 10000,Bachelor's Degree,5,5,3,1,1,1,1,1,1,4,4,3,4,3,1,5,5,5,1
+Male,Malay,Malaysian,Seperated,Retired,RM 5000 - RM 10000,Bachelor's Degree,5,5,4,4,4,5,5,5,5,5,5,5,5,5,1,5,5,5,5
+Male,Malay,Malaysian,Seperated,Retired,RM 5000 - RM 10000,Bachelor's Degree,5,5,4,4,4,5,5,5,5,5,5,5,5,5,1,5,5,5,5
+Female,Malay,Malaysian,Married,Professional,Rm 1200- RM 5000,Bachelor's Degree,5,5,5,4,4,4,4,4,4,4,4,4,3,5,4,3,4,3,5
+Female,Malay,Malaysian,Married,Professional,Rm 1200- RM 5000,Bachelor's Degree,5,5,5,4,4,4,4,4,4,4,4,4,3,5,4,3,4,3,5
+Male,Chinese,Malaysian,Married,Professional,> RM 10000,Bachelor's Degree,4,5,4,5,5,5,5,5,5,5,5,5,4,4,4,5,5,5,5
+Female,Chinese,Malaysian,Married,Retired,Rm 1200- RM 5000,Secondary school,4,4,5,5,5,4,3,4,5,5,4,3,3,3,3,3,3,3,3
+Male,Filipino,Non-Malaysian,Single,Professional,RM 5000 - RM 10000,Bachelor's Degree,5,5,5,5,5,5,5,5,5,5,5,5,4,4,4,5,5,5,5
+Male,Filipino,Non-Malaysian,Single,Professional,RM 5000 - RM 10000,Bachelor's Degree,5,5,5,5,5,5,5,5,5,5,5,5,4,4,4,5,5,5,5
+Female,Chinese,Malaysian,Married,Administrator ,Rm 1200- RM 5000,Diploma,4,5,4,5,5,5,5,5,5,5,5,5,5,4,3,5,5,5,5
+Male,Chinese,Malaysian,Single,Administrator ,Rm 1200- RM 5000,Bachelor's Degree,5,5,5,5,5,5,5,5,4,4,3,5,4,3,3,5,5,5,5
+Female,Chinese,Malaysian,Single,Freelancer,<RM 1200,Secondary school,5,5,5,5,5,5,5,5,5,3,5,4,5,5,5,5,5,5,5
+Female,Chinese,Malaysian,Married,Retired,<RM 1200,Diploma,5,5,4,5,5,5,4,5,5,4,5,5,4,4,5,5,5,5,5
+Male,Chinese Indonesian,Non-Malaysian,Married,Businessman,> RM 10000,Bachelor's Degree,5,5,4,5,5,4,4,5,4,5,5,4,5,5,4,4,5,4,5
+Female,Chinese,Malaysian,Married,Professional,RM 5000 - RM 10000,Bachelor's Degree,4,5,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+Male,Chinese,Malaysian,Married,Professional,RM 5000 - RM 10000,Secondary school,5,5,5,4,5,5,5,5,5,5,5,4,4,5,5,5,5,5,5
+Female,Malay,Malaysian,Single,Freelancer,<RM 1200,Secondary school,5,5,5,5,5,4,3,4,5,5,4,3,3,3,3,3,3,3,3
+Female,Malay,Malaysian,Single,Businessman,> RM 10000,Bachelor's Degree,5,4,5,5,5,5,5,5,5,5,5,5,4,4,4,5,5,5,5
+Female,Chinese,Malaysian,Married,Professional,RM 5000 - RM 10000,Bachelor's Degree,5,5,5,5,5,5,5,5,5,5,5,5,4,4,4,5,5,5,5
+Female,Chinese,Malaysian,Single,Professional,RM 5000 - RM 10000,Bachelor's Degree,5,5,4,5,5,5,5,5,5,5,5,5,5,4,3,5,5,5,5
+Female,Indonesian,Non-Malaysian,Married,Housewife,<RM 1200,Diploma,4,4,5,5,5,4,3,4,5,5,4,3,3,3,3,3,3,3,3
+Male,Filipino,Non-Malaysian,Married,Professional,> RM 10000,Master/PhD/Others,4,5,5,5,5,5,5,5,5,5,5,5,4,4,4,5,5,5,5
+Female,Chinese,Malaysian,Married,Professional,RM 5000 - RM 10000,Master/PhD/Others,4,5,5,5,5,5,5,5,5,5,5,5,4,4,4,5,5,5,5
+Female,Malay,Malaysian,Married,Professional,RM 5000 - RM 10000,Bachelor's Degree,4,4,4,5,5,5,5,5,5,5,5,5,5,4,3,5,5,5,5
+Female,Malay,Malaysian,Married,Freelancer,<RM 1200,Secondary school,4,5,3,5,5,5,4,5,5,5,5,5,4,4,4,4,5,4,5
+Male,Chinese,Malaysian,Single,Professional,> RM 10000,Bachelor's Degree,4,5,4,5,5,5,5,5,5,5,5,2,1,3,1,4,5,3,4
+Female,Chinese,Malaysian,Single,Freelancer,Rm 1200- RM 5000,Bachelor's Degree,5,5,5,5,5,5,5,5,5,5,5,5,4,5,5,5,5,5,5
+Female,Chinese,Malaysian,Single,Freelancer,Rm 1200- RM 5000,Bachelor's Degree,5,5,5,5,5,5,5,5,5,5,5,5,4,5,5,5,5,5,5
+Female,Chinese,Malaysian,Married,Freelancer,Rm 1200- RM 5000,Bachelor's Degree,4,5,4,4,3,4,3,3,5,5,5,4,4,3,2,4,4,4,4
+Female,Chinese,Malaysian,Married,Professional,RM 5000 - RM 10000,Bachelor's Degree,5,5,5,5,5,5,5,5,4,5,5,5,5,5,5,5,5,5,5
+Female,Chinese,Malaysian,Single,Professional,Rm 1200- RM 5000,Bachelor's Degree,5,5,5,5,5,5,5,5,4,4,4,4,3,4,4,5,5,5,5
+Female,Chinese,Malaysian,Single,Professional,Rm 1200- RM 5000,Master/PhD/Others,5,5,5,5,5,5,5,5,5,5,5,5,5,3,3,5,5,5,5
+Female,Malay,Malaysian,Married,Housewife,RM 5000 - RM 10000,Bachelor's Degree,5,5,4,5,5,5,5,5,5,5,4,5,4,5,5,5,5,5,5
+Female,Malay,Malaysian,Married,Housewife,RM 5000 - RM 10000,Bachelor's Degree,5,5,4,5,5,5,5,5,5,5,4,5,4,5,5,5,5,5,5
+Male,Chinese,Malaysian,Married,Unemployed,<RM 1200,Bachelor's Degree,4,5,4,4,5,4,4,4,4,5,4,5,4,4,4,4,5,5,5
+Female,Purasian,Malaysian,Married,Retired,Rm 1200- RM 5000,Secondary school,5,5,5,5,5,3,3,5,5,5,5,5,2,5,5,3,4,4,3
+Female,Chinese,Malaysian,Married,Housewife,<RM 1200,Bachelor's Degree,4,5,3,5,5,5,4,5,5,5,5,5,4,4,4,4,5,4,5
+Female,Chinese,Malaysian,Single,Unemployed,<RM 1200,Bachelor's Degree,5,5,4,5,5,5,5,5,5,5,5,2,1,3,1,4,5,3,4
+Male,Chinese,Malaysian,Single,Student,<RM 1200,Diploma,4,5,4,5,5,5,5,5,4,5,4,3,2,4,5,4,5,4,5
+Female,Chinese,Malaysian,Single,Unemployed,<RM 1200,Bachelor's Degree,5,5,4,5,5,5,5,5,5,5,5,2,1,3,1,4,5,3,4
+Female,Chinese,Non-Malaysian,Married,Housewife,Rm 1200- RM 5000,Secondary school,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+Female,Chinese,Malaysian,Single,Tutor,Rm 1200- RM 5000,Bachelor's Degree,4,5,4,4,4,4,4,4,4,4,4,1,2,3,4,3,4,4,4
+Female,Chinese,Malaysian,Married,Umemployed,<RM 1200,Diploma,4,4,4,5,4,3,3,3,4,3,3,3,4,4,3,4,3,4,3
+Female,Malay,Malaysian,Married,Hospital aider,Rm 1200- RM 5000,Diploma,5,5,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+Male,Malay,Malaysian,Single,Unemployed,<RM 1200,Bachelor's Degree,4,4,5,3,4,4,3,5,5,4,2,5,1,4,3,2,2,3,3
+Female,Chinese,Malaysian,Single,Umemployed,<RM 1200,Bachelor's Degree,4,3,3,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+Female,Chinese Indonesian,Non-Malaysian,Married,Professional,Rm 1200- RM 5000,Master/PhD/Others,4,4,4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+Female,Indonesian,Non-Malaysian,Married,Housewife,Rm 1200- RM 5000,Diploma,4,3,4,5,4,3,3,3,4,3,3,3,4,4,3,4,3,4,3
+Female,Chinese,Malaysian,Married,Housewife,<RM 1200,Diploma,1,1,2,3,3,3,3,4,3,2,2,3,1,3,2,4,4,4,3
+Female,Indonesian,Non-Malaysian,Married,Professional,> RM 10000,Bachelor's Degree,4,4,5,4,4,5,5,4,5,5,5,5,5,5,5,5,5,5,5
+Female,Chinese,Malaysian,Single,Student,<RM 1200,Bachelor's Degree,4,5,5,5,5,5,5,5,5,5,5,5,5,4,4,5,5,5,5
+Female,Chinese,Malaysian,Married,Professional,Rm 1200- RM 5000,Bachelor's Degree,1,1,2,4,4,2,1,1,1,2,1,2,2,2,1,1,1,1,1
+Female,Chinese,Malaysian,Divorced,Professional,> RM 10000,Master/PhD/Others,5,5,5,5,5,5,5,5,5,5,5,5,4,5,5,5,5,5,5
+Male,Chinese,Malaysian,Married,Businessman,RM 5000 - RM 10000,Diploma,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5
+Female,Chinese,Malaysian,Single,Professional,Rm 1200- RM 5000,Bachelor's Degree,3,4,3,5,5,4,3,5,4,5,3,3,2,3,3,3,3,3,3
+Male,Chinese,Malaysian,Single,Student,<RM 1200,Diploma,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5

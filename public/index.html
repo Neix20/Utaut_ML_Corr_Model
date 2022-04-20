@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Correlation Analysis of E-Payment Features</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
+
+    <script>
+        function update_btn(btn, val) {
+            let to_add = "",
+                to_remove = "";
+
+            if (val == true) {
+                to_add = "btn-secondary";
+                to_remove = "btn-primary";
+            } else {
+                to_add = "btn-primary";
+                to_remove = "btn-secondary";
+            }
+
+            btn.attr("disabled", !val);
+            btn.removeClass(to_add);
+            btn.addClass(to_remove);
+        }
+
+        function go_to_next_panel(panel_ind, num_of_btn) {
+            // Update Navigation Button
+            let prev_btn = $(".stepwizard-step button").eq(panel_ind);
+            update_btn(prev_btn, false);
+
+            let next_btn = $(".stepwizard-step button").eq(panel_ind + 1);
+            update_btn(next_btn, true);
+
+            // Previous Panel
+            $(".panel").eq(panel_ind).css("display", "none");
+
+            // Next Panel
+            $(".panel").eq(panel_ind + 1).css("display", "block");
+
+            // Disable 4th Next Panel
+
+            if (panel_ind + 1 > 0) {
+                $("#prev_btn").attr("disabled", false);
+            }
+            if (panel_ind + 1 == num_of_btn - 1) {
+                $("#next_btn").attr("disabled", true);
+            }
+        }
+
+        function go_to_prev_panel(panel_ind, num_of_btn) {
+            // Update Navigation Button
+            let prev_btn = $(".stepwizard-step button").eq(panel_ind);
+            update_btn(prev_btn, false);
+
+            let next_btn = $(".stepwizard-step button").eq(panel_ind - 1);
+            update_btn(next_btn, true);
+
+            // Previous Panel
+            $(".panel").eq(panel_ind).css("display", "none");
+
+            // Next Panel
+            $(".panel").eq(panel_ind - 1).css("display", "block");
+
+            if (panel_ind - 1 <= 0) {
+                $("#prev_btn").attr("disabled", true);
+            }
+            if (panel_ind - 1 < num_of_btn - 1) {
+                $("#next_btn").attr("disabled", false);
+            }
+        }
+
+        function gen_feat_checkbox(name, value) {
+            return `<div class="form-group">
+                <input type="checkbox" name="${name}" value="${value}">
+                <label>${value}</label>
+            </div>`;
+        }
+
+        function gen_feat_radio(name, value) {
+            return `<div class="form-group">
+                <input type="radio" name="${name}" value="${value}">
+                <label>${value}</label>
+            </div>`;
+        }
+
+        function gen_img_html(img_path) {
+            return `<img src="${img_path}?${Math.random()}" style="width: 100%" />`;
+        }
+
+        function gen_list_item(feat) {
+            return `<li>${feat}</li>`;
+        }
+
+        function gen_corr_matrix_thead(arr) {
+            arr.unshift("");
+            let str = arr.map(elem => `<th>${elem}</th>`).join("");
+            return `<thead><tr>${str}</tr></thead>`;
+        }
+
+        function gen_corr_matrix_tbody(corr_dict) {
+            let str = "";
+
+            for (let key in corr_dict) {
+                val = corr_dict[key];
+                str += gen_corr_matrix_tbody_tr(key, val);
+            }
+
+            return `<tbody>${str}</tbody>`;
+        }
+
+        function gen_corr_matrix_tbody_tr(master_key, dict) {
+            let str = "";
+
+            str += `<th>${master_key}</th>`;
+
+            for (let key in dict) {
+                let val = dict[key];
+                let output = (val == null) ? "" : `${parseFloat(val).toFixed(2)}`;
+                str += `<td>${output}</td>`;
+            }
+
+            return `<tr>${str}</tr>`;
+        }
+
+        function gen_corr_matrix(corr_dict) {
+            let thead = gen_corr_matrix_thead(Object.keys(corr_dict)),
+                tbody = gen_corr_matrix_tbody(corr_dict);
+            return `<table class="table table-striped text-center">${thead}${tbody}</table>`;
+        }
+
+        function gen_res_thead(arr) {
+            arr.unshift("");
+            let str = arr.map(elem => `<th>${elem}</th>`).join("");
+            return `<thead><tr>${str}</tr></thead>`;
+        }
+
+        function model_res_dict(res_dict) {
+            let final_dict = {};
+            for (let key in res_dict) {
+                val_dict = res_dict[key];
+
+                for (let model_name of Object.keys(val_dict)) {
+                    if (final_dict[model_name] == undefined) {
+                        final_dict[model_name] = [];
+                    }
+                    let float_val = val_dict[model_name];
+                    final_dict[model_name].push(parseFloat(float_val).toFixed(2));
+                }
+            }
+            return final_dict;
+        }
+
+        function gen_res_tbody(res_dict) {
+            // Construct New Dictionary
+            let model_dict = model_res_dict(res_dict),
+                str = "";
+
+            for (let model_name in model_dict) {
+                let tmp_str = "";
+                tmp_str += `<th>${model_name}</th>`;
+                val = model_dict[model_name];
+                tmp_str += val.map(elem => `<td>${elem}</td>`).join("");
+                str += `<tr>${tmp_str}</tr>`;
+            }
+            return `<tbody>${str}</tbody>`;
+        }
+
+        function gen_res_tbl(res_dict) {
+            let thead = gen_res_thead(Object.keys(res_dict)),
+                tbody = gen_res_tbody(res_dict);
+            return `<table class="table table-striped text-center">${thead}${tbody}</table>`;
+        }
+
+        function hide_loading_div() {
+            $("#loading_div").css("display", "none");
+        }
+
+        function show_loading_div() {
+            $("#loading_div").css("display", "block");
+        }
+
+        $(function() {
+            let panel_ind = 0,
+                num_of_btn = $(".stepwizard-step button").length,
+                utaut_feature = [],
+                fileName = "";
+
+            // Hide Loading Div
+            hide_loading_div();
+
+            // Get List of Buttons
+            $(".stepwizard-step button").each((ind, elem) => {
+                elem.innerHTML = (ind + 1);
+            });
+
+            // List of Panels
+            $(".panel").each((ind, elem) => {
+                elem.style.display = "none";
+            });
+
+            // Default
+            $("#prev_btn").attr("disabled", true);
+            $("#next_btn").attr("disabled", true);
+            update_btn($(".stepwizard-step button").eq(0), true);
+            $(".panel").eq(panel_ind).css("display", "block");
+
+            // Next Button
+            $("#next_btn").on("click", e => {
+                go_to_next_panel(panel_ind, num_of_btn);
+                panel_ind += 1;
+            });
+
+            // Previous Button
+            $("#prev_btn").on("click", e => {
+                go_to_prev_panel(panel_ind, num_of_btn);
+                panel_ind -= 1;
+            });
+
+            let uploadCSVForm = $("form[id='uploadCSVForm']");
+            uploadCSVForm.submit(e => {
+                e.preventDefault();
+                fileName = $("form[id='uploadCSVForm'] input[type='file']").val().split("\\").at(-1);
+                show_loading_div();
+                let fData = new FormData(uploadCSVForm[0]);
+                $.ajax({
+                    url: uploadCSVForm.attr("action"),
+                    type: uploadCSVForm.attr("method"),
+                    enctype: 'multipart/form-data',
+                    processData: false, // Important!
+                    contentType: false,
+                    cache: false,
+                    data: fData,
+                    success: resp => {
+                        hide_loading_div();
+
+                        $("#upload_csv_resp").text(resp["msg"]);
+
+                        // 2nd Panel - Data Selection & Pre-processing II
+                        select_feature_callback(resp["feature_columns"]);
+                        check_selected_checkbox();
+
+                        alert(resp["msg"]);
+                        go_to_next_panel(panel_ind, num_of_btn);
+                        panel_ind += 1;
+                    }
+                });
+            });
+
+            // Feature Selection I Button
+            $("#select_feat_type_submit_btn").on("click", e => {
+                let name = "";
+
+                // Process Demographic Features
+                name = "demo_features";
+                let demographic_feature = [...document.querySelectorAll(`input[name='${name}']:checked`)].map(e => e.value);
+
+                // Process Filter Features
+                name = "filter_features";
+                let filter_feature = [...document.querySelectorAll(`input[name='${name}']:checked`)].map(e => e.value);
+
+                // Process UTAUT Features
+                name = "utaut_features"
+                utaut_feature = [...document.querySelectorAll(`input[name='${name}']:checked`)].map(e => e.value);
+
+                // Display Loading Gif
+                show_loading_div();
+                $.ajax({
+                    url: "/genCorrImage",
+                    type: "POST",
+                    data: {
+                        "target_feature": demographic_feature,
+                        "filter_feature": filter_feature,
+                        "utaut_feature": utaut_feature,
+                        "filename": fileName
+                    },
+                    success: resp => {
+                        // Hide Loading Gif
+                        hide_loading_div();
+
+                        // 3rd Panel - Correlation Network
+
+                        // Add Correlation Image
+                        $("#Pearson-CirFig").empty();
+                        $("#Pearson-CirFig").append(gen_img_html("img/Pearson-CirFig.jpeg"));
+
+                        $("#Pearson-FruFig").empty();
+                        $("#Pearson-FruFig").append(gen_img_html("img/Pearson-FruFig.jpeg"));
+
+                        $("#Spearman-CirFig").empty();
+                        $("#Spearman-CirFig").append(gen_img_html("img/Spearman-CirFig.jpeg"));
+
+                        $("#Spearman-FruFig").empty();
+                        $("#Spearman-FruFig").append(gen_img_html("img/Spearman-FruFig.jpeg"));
+
+                        // 4th Panel - Data Selection & Pre-processing II
+                        let feat_dict = resp["feature_dict"];
+
+                        // Append Filter Features and Targeted Features
+                        select_feature_II_callback(filter_feature, demographic_feature, feat_dict);
+
+                        alert(resp["msg"]);
+
+                        // Change to Next Panel
+                        go_to_next_panel(panel_ind, num_of_btn);
+                        panel_ind += 1;
+
+                        $("#next_btn").attr("disabled", false);
+                    }
+                });
+            });
+
+            $("#select_feat_II_submit_btn").on("click", e => {
+                // Get To_Filter_feature and target_feature
+                let filter_feature = $("input[name='filter_features_II']:checked").val(),
+                    filter_res_feature = $("input[name='filter_features_res_II']:checked").val(),
+                    target_feature = $("input[name='target_features_II']:checked").val();
+
+                filter_feature = `${filter_feature}->${filter_res_feature}`;
+
+                // Display Loading Gif
+                show_loading_div();
+
+                $.ajax({
+                    url: "/genTrainTest",
+                    type: "POST",
+                    data: {
+                        "filter_feature": filter_feature,
+                        "target_feature": target_feature,
+                        "utaut_feature": utaut_feature
+                    },
+                    success: resp => {
+                        hide_loading_div();
+
+                        // 5th Panel - Feature Selection
+                        let cfs_dict = resp["cfs_dict"];
+
+                        let inter_feature_obj = cfs_dict["inter_feature_set"],
+                            non_inter_feature_obj = cfs_dict["non_inter_feature_set"],
+                            union_feature_obj = cfs_dict["union_feature_set"];
+
+                        let inter_feature_set = inter_feature_obj["feature_set"],
+                            inter_feature_corr_df = inter_feature_obj["corr_dict"];
+
+                        if (inter_feature_set.length > 0) {
+                            $("#inter_feature_set").empty();
+                            $("#inter_feature_set").append(inter_feature_set.map(feat => gen_list_item(feat)).join(""));
+
+                            $("#inter_feature_tbl").empty();
+                            $("#inter_feature_tbl").append(gen_corr_matrix(inter_feature_corr_df));
+                        }
+
+                        let non_inter_feature_set = non_inter_feature_obj["feature_set"],
+                            non_inter_feature_corr_df = non_inter_feature_obj["corr_dict"];
+
+                        if (non_inter_feature_set.length > 0) {
+                            $("#non_inter_feature_set").empty();
+                            $("#non_inter_feature_set").append(non_inter_feature_set.map(feat => gen_list_item(feat)).join(""));
+
+                            $("#non_inter_feature_tbl").empty();
+                            $("#non_inter_feature_tbl").append(gen_corr_matrix(non_inter_feature_corr_df));
+                        }
+
+                        let union_feature_set = union_feature_obj["feature_set"],
+                            union_feature_corr_df = union_feature_obj["corr_dict"];
+
+                        if (union_feature_set.length > 0) {
+                            $("#union_feature_set").empty();
+                            $("#union_feature_set").append(union_feature_set.map(feat => gen_list_item(feat)).join(""));
+
+                            $("#union_feature_tbl").empty();
+                            $("#union_feature_tbl").append(gen_corr_matrix(union_feature_corr_df));
+                        }
+
+                        // 6th Panel - Result Analysis
+
+                        // Update UTAUT Feature Naming
+                        let str = "";
+
+                        for (let val of utaut_feature) {
+                            let tmp_str = "";
+                            tmp_str += `<th>${val.split(":")[0]}</th>`;
+                            tmp_str += `<td>${val}</td>`
+                            str += `<tr>${tmp_str}</tr>`;
+                        }
+
+                        let table_str = `<table class="table table-striped text-center"><tbody>${str}</tbody></table>`;
+
+                        $("#decision_feat_tbl").empty();
+                        $("#decision_feat_tbl").append(table_str);
+
+                        let model_res_dict = resp["model_res_dict"];
+
+                        // Append model Result DataFrame
+                        $("#result_tbl").empty();
+                        $("#result_tbl").append(gen_res_tbl(model_res_dict));
+
+                        // Append images to div
+                        $("#decision_tree_graph").empty();
+                        $("#decision_tree_graph").append(gen_img_html("/img/decision_tree_viz.svg"));
+
+                        $("#precision_graph").empty();
+                        $("#precision_graph").append(gen_img_html("/img/precision-graph.jpeg"));
+
+                        $("#recall_graph").empty();
+                        $("#recall_graph").append(gen_img_html("/img/recall-graph.jpeg"));
+
+                        $("#f1-score_graph").empty();
+                        $("#f1-score_graph").append(gen_img_html("/img/f1-score-graph.jpeg"));
+
+                        $("#acc-score_graph").empty();
+                        $("#acc-score_graph").append(`<img src="/img/acc_score-graph.jpeg?${Math.random()}" style="width: 500px; height: 300px" />`);
+
+                        alert(resp["msg"]);
+
+                        // Change to Next Panel
+                        go_to_next_panel(panel_ind, num_of_btn);
+                        panel_ind += 1;
+                    }
+                });
+            });
+
+            $("#gen_graph_btn").on("click", e => {
+                let filter_feature = $("input[name='filter_features_II']:checked").val(),
+                    filter_res_feature = $("input[name='filter_features_res_II']:checked").val(),
+                    target_feature = $("input[name='target_features_II']:checked").val();
+
+                filter_feature = `${filter_feature}->${filter_res_feature}`;
+
+                // Display Loading Gif
+                show_loading_div();
+
+                $.ajax({
+                    url: "/genViz",
+                    type: "POST",
+                    data: {
+                        "filter_feature": filter_feature,
+                        "target_feature": target_feature
+                    },
+                    success: resp => {
+                        hide_loading_div();
+
+                        console.log(resp["msg"]);
+
+                        // Output DIV In Another Window
+                        let myWindow = window.open('', '', '_blank');
+                        let doc = myWindow.document;
+                        doc.open();
+                        doc.write(gen_img_html("img/filter-target-graph.jpeg"));
+                        doc.close();
+                    }
+                });
+            });
+        });
+
+        function select_feature_callback(feature_arr) {
+            let id = "",
+                name = "";
+
+            id = "#demo_feat_block";
+            name = "demo_features";
+            $(id).empty();
+            for (feat of feature_arr) {
+                $(id).append(gen_feat_checkbox(name, feat));
+            }
+
+            id = "#filter_feat_block";
+            name = "filter_features";
+            $(id).empty();
+            for (feat of feature_arr) {
+                $(id).append(gen_feat_checkbox(name, feat));
+            }
+            $(id).append(gen_feat_checkbox(name, "None"));
+
+            id = "#utaut_feat_block";
+            name = "utaut_features";
+            $(id).empty();
+            for (feat of feature_arr) {
+                $(id).append(gen_feat_checkbox(name, feat));
+            }
+        }
+
+        function select_feature_II_callback(filter_feature, targeted_feature, feat_dict) {
+            let id = "",
+                name = "";
+
+            // Disable Visualization, Generate Unique and Submit Button
+            $("#gen_graph_btn").attr("disabled", true);
+            $("#select_feat_II_submit_btn").attr("disabled", true);
+
+            $("#filter_feat_res_II_block").empty();
+
+            id = "#filter_feat_II_block";
+            name = "filter_features_II";
+            $(id).empty();
+            for (feat of filter_feature) {
+                $(id).append(gen_feat_radio(name, feat));
+            }
+
+            id = "#target_feat_II_block";
+            name = "target_features_II";
+            $(id).empty();
+            for (feat of targeted_feature) {
+                $(id).append(gen_feat_radio(name, feat));
+            }
+
+            $(`input[name='filter_features_II']`).on("click", e => {
+                // Get Selected Value
+                let selected_feature = e.target.value;
+                let arr = feat_dict[selected_feature];
+
+                // Append to Filter Res
+                id = "#filter_feat_res_II_block";
+                $(id).empty();
+
+                name = "filter_features_res_II";
+                for (feat of arr) {
+                    $(id).append(gen_feat_radio(name, feat))
+                }
+
+                $(`input[name='filter_features_res_II']`).on("click", e => {
+                    // Check to see if at least one in Filter Variables
+                    let f_chk_len = $(`input[name='filter_features_res_II']:checked`).length,
+                        t_chk_len = $(`input[name='target_features_II']:checked`).length;
+
+                    // Check to see if at least one target feature is selected
+                    if (t_chk_len >= 1 && f_chk_len >= 1) {
+                        $("#gen_graph_btn").attr("disabled", false);
+                        $("#select_feat_II_submit_btn").attr("disabled", false);
+                    } else {
+                        $("#gen_graph_btn").attr("disabled", true);
+                        $("#select_feat_II_submit_btn").attr("disabled", true);
+                    }
+                });
+
+                // Check to see if at least one in Filter Variables
+                let f_chk_len = $(`input[name='filter_features_res_II']:checked`).length,
+                    t_chk_len = $(`input[name='target_features_II']:checked`).length;
+
+                // Check to see if at least one target feature is selected
+                if (t_chk_len >= 1 && f_chk_len >= 1) {
+                    $("#gen_graph_btn").attr("disabled", false);
+                    $("#select_feat_II_submit_btn").attr("disabled", false);
+                } else {
+                    $("#gen_graph_btn").attr("disabled", true);
+                    $("#select_feat_II_submit_btn").attr("disabled", true);
+                }
+            });
+
+            $(`input[name='target_features_II']`).on("click", e => {
+                // Check to see if at least one in Filter Variables
+                let f_chk_len = $(`input[name='filter_features_res_II']:checked`).length,
+                    t_chk_len = $(`input[name='target_features_II']:checked`).length;
+
+                // Check to see if at least one target feature is selected
+                if (t_chk_len >= 1 && f_chk_len >= 1) {
+                    $("#gen_graph_btn").attr("disabled", false);
+                    $("#select_feat_II_submit_btn").attr("disabled", false);
+                } else {
+                    $("#gen_graph_btn").attr("disabled", true);
+                    $("#select_feat_II_submit_btn").attr("disabled", true);
+                }
+            });
+        }
+
+        function check_selected_checkbox() {
+            let name = "";
+            name = "demo_features";
+            $(`input[name='${name}']`).slice(6, 12).each(function() {
+                this.checked = true;
+            });
+
+            name = "filter_features";
+            $(`input[name='${name}']`).slice(-1).each(function() {
+                this.checked = true;
+            });
+
+            name = "utaut_features"
+            $(`input[name='${name}']`).slice(28).each(function() {
+                this.checked = true;
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <div id="loading_div" style="position: fixed; top: 0; left: 0;height: 100%; width: 100%; background-color: white; opacity: 0.5; z-index: 2">
+        <img src="gif/loading.gif" style="position: fixed; top: 30%; left: 35%;">
+    </div>
+
+    <div class="p-3" style="background-color:lightgray;">
+        <div class="card">
+            <div class="card-body">
+
+                <div class="stepwizard">
+                    <div class="stepwizard-row">
+                        <div class="stepwizard-step">
+                            <button class="btn btn-secondary btn-lg" disabled="true"></button>
+                            <p>Upload CSV</p>
+                        </div>
+                        <div class="stepwizard-step">
+                            <button class="btn btn-secondary btn-lg" disabled="true"></button>
+                            <p>Data Selection & Pre-processing I</p>
+                        </div>
+                        <div class="stepwizard-step">
+                            <button class="btn btn-secondary btn-lg" disabled="true"></button>
+                            <p>Correlation Network</p>
+                        </div>
+                        <div class="stepwizard-step">
+                            <button class="btn btn-secondary btn-lg" disabled="true"></button>
+                            <p>Data Selection & Pre-processing II</p>
+                        </div>
+                        <div class="stepwizard-step">
+                            <button class="btn btn-secondary btn-lg" disabled="true"></button>
+                            <p>Feature Selection</p>
+                        </div>
+
+                        <div class="stepwizard-step">
+                            <button class="btn btn-secondary btn-lg" disabled="true"></button>
+                            <p>Result Analysis</p>
+                        </div>
+                        <div class="stepwizard-step">
+                            <button class="btn btn-secondary btn-lg" disabled="true"></button>
+                            <p>Complete!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border border-dark">
+
+                    <!--1st Panel - Upload CSV-->
+                    <div class="panel p-3" style="height: 500px">
+                        <div class="d-flex justify-content-center" style="height: 100%">
+                            <div class="align-self-center" style="width: 1000px">
+
+                                <div class="h2">Upload CSV</div>
+
+                                <form id="uploadCSVForm" action="uploadCSV" method="POST">
+                                    <div class="row" style="width: 100%">
+                                        <div class="col-8">
+                                            <input type="file" class="form-control" style="font-size:24px;" name="ePaymentDataset">
+                                        </div>
+                                        <div class="col-4">
+                                            <input type="submit" class="btn btn-success btn-lg" value="Submit" />
+                                        </div>
+                                    </div>
+                                </form>
+
+                                <div id="upload_csv_resp" class="h2 text-success"></div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--2nd Panel - Data Selection & Pre-processing II -->
+                    <div class="panel" style="height: 500px">
+                        <div class="p-3">
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="border border-dark px-3" style="height: 425px; overflow: auto;">
+                                        <div class="h3 text-center">Demographic Variables</div>
+                                        <div id="demo_feat_block" style="width: 2000px"></div>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="border border-dark px-3" style="height: 425px; overflow: auto;">
+                                        <div class="h3 text-center">Filter Variables</div>
+                                        <div id="filter_feat_block" style="width: 2000px"></div>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="border border-dark px-3" style="height: 425px; overflow: auto;">
+                                        <div class="h3 text-center">UTAUT Variables</div>
+                                        <div id="utaut_feat_block" style="width: 2000px"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row p-1">
+                                <div class="col">
+                                    <button id="select_feat_type_submit_btn" class="btn btn-success btn-lg float-end">Submit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--3rd Panel - Correlation Network -->
+                    <div class="panel">
+                        <div class="p-3">
+                            <div class="h2"><u>Pearson Coefficient</u></div>
+
+                            <div class="row">
+                                <div class="col">
+                                    <div class="border border-dark" id="Pearson-CirFig">
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="border border-dark" id="Pearson-FruFig">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="h2"><u>Spearman Coefficient</u></div>
+
+                            <div class="row">
+                                <div class="col">
+                                    <div class="border border-dark" id="Spearman-CirFig">
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="border border-dark" id="Spearman-FruFig">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--4th Panel - Data Selection & Pre-processing II-->
+                    <div class="panel" style="height: 500px">
+                        <div class="p-3">
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="border border-dark px-3" style="height: 425px; overflow: auto;">
+                                        <div class="h3 text-center">Filter Variables</div>
+                                        <div id="filter_feat_II_block" style="width: 2000px"></div>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="border border-dark px-3" style="height: 425px; overflow: auto;">
+                                        <div class="h3 text-center">Filter Result Variables</div>
+                                        <div id="filter_feat_res_II_block" style="width: 2000px"></div>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="border border-dark px-3" style="height: 425px; overflow: auto;">
+                                        <div class="h3 text-center">Targeted Variables</div>
+                                        <div id="target_feat_II_block" style="width: 2000px"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row p-1">
+                                <div class="col">
+                                    <button id="gen_graph_btn" class="btn btn-primary btn-lg">Visualization</button>
+                                </div>
+                                <div class="col">
+                                    <button id="select_feat_II_submit_btn" class="btn btn-success btn-lg float-end">Submit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--5th Panel - Feature Selection -->
+                    <div class="panel">
+                        <div class="p-3">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="border border-dark px-3">
+                                        <div class="h3">Feature Set Selected using: <b>Pearson Correlation</b>, <b>Spearman Correlation</b></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col">
+                                    <div class="border border-dark p-3">
+                                        <div class="h3"><u>Intersected Feature Set</u></div>
+                                        <ul id="inter_feature_set"></ul>
+                                        <div id="inter_feature_tbl" class="border border-dark"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col">
+                                    <div class="border border-dark p-3">
+                                        <div class="h3"><u>Non-Intersected Feature Set</u></div>
+                                        <ul id="non_inter_feature_set"></ul>
+                                        <div id="non_inter_feature_tbl" class="border border-dark"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mt-3">
+                                <div class="col">
+                                    <div class="border border-dark p-3">
+                                        <div class="h3"><u>Union Feature Set</u></div>
+                                        <ul id="union_feature_set"></ul>
+                                        <div id="union_feature_tbl" class="border border-dark"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--6th Panel - Result Analysis -->
+                    <div class="panel">
+                        <div class="p-3">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="border border-dark p-3">
+                                        <div class="h3"><u>Model Result</u></div>
+                                        <div id="result_tbl" class="border border-dark"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col">
+                                    <div class="border border-dark px-3 pb-3">
+                                        <div class="h3"><u>Decision Tree Visualization</u></div>
+                                        <details>
+                                            <summary class="h4 text-center">UTAUT Feature Naming</summary>
+                                            <div class="row justify-content-center">
+                                                <div class="col-8">
+                                                    <div id="decision_feat_tbl" class="border border-dark"></div>
+                                                </div>
+                                            </div>
+                                        </details>
+                                        <div id="decision_tree_graph" class="text-center"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-4">
+                                    <div class="border border-dark px-3 pb-3">
+                                        <div class="h3"><u>Precision Graph</u></div>
+                                        <div id="precision_graph" class="text-center"></div>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="border border-dark px-3 pb-3">
+                                        <div class="h3"><u>Recall Graph</u></div>
+                                        <div id="recall_graph" class="text-center"></div>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="border border-dark px-3 pb-3">
+                                        <div class="h3"><u>F1-Score Graph</u></div>
+                                        <div id="f1-score_graph" class="text-center"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col">
+                                    <div class="border border-dark px-3 pb-3">
+                                        <div class="h3"><u>Accuracy Score Graph</u></div>
+                                        <div id="acc-score_graph" class="text-center"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--7th Panel - Complete -->
+                    <div class="panel" style="height: 500px">
+                        <div class="d-flex justify-content-center" style="height: 100%">
+                            <div class="align-self-center">
+                                <div class="h2 fst-italic">Thank you for using our program!</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row mt-2">
+                    <div class="col">
+                        <div class="float-end">
+                            <button id="prev_btn" class="btn btn-outline-primary btn-lg mx-3">Previous</button>
+                            <button id="next_btn" class="btn btn-outline-primary btn-lg">Next</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
